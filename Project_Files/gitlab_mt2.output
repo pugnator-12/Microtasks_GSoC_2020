@@ -1,0 +1,3709 @@
+Details for : ns-3-dev
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583919977.893366,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "b44456c71901b029117c39b651def92c7c097165",
+    "updated_on": 1547226289.599,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "17250566",
+        "owner": "nsnam",
+        "iid": 12,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 17250566,
+        "iid": 12,
+        "project_id": 7128405,
+        "title": "core: Avoid implicit Time conversions",
+        "description": "Tom Henderson:\n> I made a subtle error in a program due to an implicit conversion, and suggest a change to our Time APIs to prevent it.\n> \n> Suppose I declare:\n> \n> Time startTime = Seconds (2);\n> \n> and then later, I intend to do:\n> \n> Time appStartTime = startTime;\n> \n> but I forget that startTime is a Time and not an integer or double, so I do:\n> \n> Time appStartTime = Seconds (startTime);\n> \n> This compiles and runs, but the value startTime is converted to an integer number of nanoseconds, so appStartTime actually gets the value 2e+9 seconds.\n> \n> Attached patch prevents the implicit conversion of Time passed as value to these time methods.",
+        "state": "opened",
+        "created_at": "2019-01-10T19:51:12.835Z",
+        "updated_at": "2019-01-11T17:04:49.599Z",
+        "closed_at": null,
+        "closed_by": null,
+        "labels": [
+            "module:core"
+        ],
+        "milestone": null,
+        "assignees": [
+            {
+                "id": 1138790,
+                "name": "Peter Barnes",
+                "username": "pdbj",
+                "state": "active",
+                "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                "web_url": "https://gitlab.com/pdbj"
+            }
+        ],
+        "author": {
+            "id": 1138790,
+            "name": "Peter Barnes",
+            "username": "pdbj",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+            "web_url": "https://gitlab.com/pdbj"
+        },
+        "assignee": {
+            "id": 1138790,
+            "name": "Peter Barnes",
+            "username": "pdbj",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+            "web_url": "https://gitlab.com/pdbj"
+        },
+        "user_notes_count": 2,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/12",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/12",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/12/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/12/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#12",
+            "relative": "#12",
+            "full": "nsnam/ns-3-dev#12"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 130639469,
+                "type": null,
+                "body": "mentioned in merge request !9",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-01-10T19:53:08.347Z",
+                "updated_at": "2019-01-10T19:53:08.347Z",
+                "system": true,
+                "noteable_id": 17250566,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 12,
+                "award_emoji_data": []
+            },
+            {
+                "id": 130680219,
+                "type": null,
+                "body": "changed the description",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-01-11T01:04:41.334Z",
+                "updated_at": "2019-01-11T01:04:41.334Z",
+                "system": true,
+                "noteable_id": 17250566,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 12,
+                "award_emoji_data": []
+            },
+            {
+                "id": 130680234,
+                "type": null,
+                "body": "Code snippet to demonstrate:\n\n```c++\nTime t0 = Seconds (2);\nTime t1 = t0;\nTime t2 = Seconds (t0);\nstd::cout <<   \"t0:  \" << t0\n          << \"\\nt1:  \" << t1\n          << \"\\nt2:  \" << t2\n          << std::endl;\n```\n\nCurrently this produces\n```txt\nt0:  +2000000000.0ns\nt1:  +2000000000.0ns\nt2:  +2000000000000000000.0ns\n```\nNote that `t2` is 1e9 too large, as reported by Tom.\n\nThe conversion path for `t2` found by the compiler is `operator int64x64_t (Time)` &rarr; `Seconds (int64x64_t)`\n\nIMO the problem should be solved by either removing that conversion, or marking it `explicit`.\n\nThe only compilation error this introduces is in `DelayJitterEstimation`, where `m_jitter` is declared as `int64x64_t`.  Simply changing this declaration fixes the compile and passes all tests.  The complete patch (marking the `int64x64_t` conversion as `explicit`) is [time-explicit-int64x64_t.diff](/uploads/b881d33db127d7233dbe6af55fa2c6ad/time-explicit-int64x64_t.diff).\n\nOne could also define the convenience copiers `Seconds (Time)`, _etc_, which would allow the example to compile as is.  However, logically this makes no sense (a Time already has a unit, so it doesn't need another unit wrapper).  IMO such code is a bug, and we should let the compiler catch it.",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-01-11T01:04:50.498Z",
+                "updated_at": "2019-01-11T01:05:46.790Z",
+                "system": false,
+                "noteable_id": 17250566,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 12,
+                "award_emoji_data": []
+            },
+            {
+                "id": 130922824,
+                "type": null,
+                "body": "I'm fine with the `explicit operator()` solution but I am not convinced by the change to `DelayJitterEstimation`.  I don't think that the changed code follows Section A.8 of RFC 1889 as intended.  There are no tests around this class so perhaps that is why tests may not fail.  The RFC approach suggests to maintain jitter as floating point, but has different heuristics for maintaining as integer.  I believe that Mathieu was using int64x64_t as a Q64.64 type fixed point to implement the code in the RFC, and returning the high (integer) part.",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-11T17:04:49.579Z",
+                "updated_at": "2019-01-11T17:04:49.579Z",
+                "system": false,
+                "noteable_id": 17250566,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 12,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583919980.144559,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "363171825ea4d3f1a666aeb83ce3778629f9c544",
+    "updated_on": 1547442145.578,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "17285676",
+        "owner": "nsnam",
+        "iid": 17,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 17285676,
+        "iid": 17,
+        "project_id": 7128405,
+        "title": "./waf build fails with Python 3",
+        "description": "./waf build on macOS using python 3.7.1 fails with:\n\n\n     File \"/path/to/ns-3-dev/src/config-store/wscript\", line 91, in build\n        module.includes = xcrun_output + '/usr/include/libxml2'\n    TypeError: can't concat str to bytes",
+        "state": "closed",
+        "created_at": "2019-01-12T05:18:59.268Z",
+        "updated_at": "2019-01-14T05:02:25.578Z",
+        "closed_at": "2019-01-14T05:02:25.543Z",
+        "closed_by": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "labels": [
+            "build system"
+        ],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "assignee": null,
+        "user_notes_count": 1,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/17",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/17",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/17/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/17/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#17",
+            "relative": "#17",
+            "full": "nsnam/ns-3-dev#17"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 131012205,
+                "type": null,
+                "body": "changed the description",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-12T05:19:24.238Z",
+                "updated_at": "2019-01-12T05:19:24.238Z",
+                "system": true,
+                "noteable_id": 17285676,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 17,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131194065,
+                "type": null,
+                "body": "fixed in changeset f2fa869",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-14T05:02:25.192Z",
+                "updated_at": "2019-01-14T05:02:25.192Z",
+                "system": false,
+                "noteable_id": 17285676,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 17,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131194068,
+                "type": null,
+                "body": "closed",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-14T05:02:25.597Z",
+                "updated_at": "2019-01-14T05:02:25.597Z",
+                "system": true,
+                "noteable_id": 17285676,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 17,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583919981.682786,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "99289f4959a02f63ca7753601002259655a06eb7",
+    "updated_on": 1548778386.637,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "17674582",
+        "owner": "nsnam",
+        "iid": 24,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 17674582,
+        "iid": 24,
+        "project_id": 7128405,
+        "title": "libgcrypt detection failure due to a typo",
+        "description": "```\nPlatform: Linux (Ubuntu 18.10, 64-bit), all updates current as of 01/25/19.  \nHW: x86-64  \nClang++ version : 7.0.0-3 (tags/RELEASE_700/final), Target: x86_64-pc-linux-gnu  \nNS3 Source: ns-allinone-3.29.tar.bz2  \n```\nThe ./waf configure command (NS3 v 3.29) fails to detect libgcrypt even if it installed and present.\n\nThe top-level wscript (ns-allinone-3.29/ns-3.29/wscript) sets the HAVE_CRYPTO variable if it detects libgcypt.  Later on the script instead checks for the HAVE_GCRYPT variable to determine presence of libgcrypt.  This is a typo and HAVE_CRYPTO should be replaced with HAVE_GCRYPT.\n\nChanging HAVE_CRYPTO to HAVE_GCRYPT fixes the issue and the script reports successful detection of libgcypt.",
+        "state": "closed",
+        "created_at": "2019-01-26T00:38:06.038Z",
+        "updated_at": "2019-01-29T16:13:06.637Z",
+        "closed_at": "2019-01-29T13:18:25.910Z",
+        "closed_by": {
+            "id": 1262351,
+            "name": "Alexander Krotov",
+            "username": "link2xt",
+            "state": "active",
+            "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+            "web_url": "https://gitlab.com/link2xt"
+        },
+        "labels": [],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 3435595,
+            "name": "Dev Null",
+            "username": "dnz42",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/09423adb1191c7e602de83c7daf2c357?s=80&d=identicon",
+            "web_url": "https://gitlab.com/dnz42"
+        },
+        "assignee": null,
+        "user_notes_count": 0,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/24",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/24",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/24/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/24/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#24",
+            "relative": "#24",
+            "full": "nsnam/ns-3-dev#24"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 136079918,
+                "type": null,
+                "body": "closed via commit d2a2e53366cabdacf9ebbe5ec96670abf244b425",
+                "attachment": null,
+                "author": {
+                    "id": 1262351,
+                    "name": "Alexander Krotov",
+                    "username": "link2xt",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+                    "web_url": "https://gitlab.com/link2xt"
+                },
+                "created_at": "2019-01-29T13:18:25.951Z",
+                "updated_at": "2019-01-29T13:18:25.951Z",
+                "system": true,
+                "noteable_id": 17674582,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 24,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920000.277293,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "e546cea6f79f9e1662a3f60b8cae651a199586ec",
+    "updated_on": 1548801288.111,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "17640493",
+        "owner": "nsnam",
+        "iid": 23,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 17640493,
+        "iid": 23,
+        "project_id": 7128405,
+        "title": "wifi: MacLow::NormalAckTimeout should not call WifiRemoteStationManager::ReportDataFailed",
+        "description": "When testing the aggregation rework, the following example crashed:\n\nsrc/wifi/examples/wifi-manager-example --wifiManager=MinstrelHt --standard=802.11ac --serverChannelWidth=40 --clientChannelWidth=40 --serverShortGuardInterval=800 --clientShortGuardInterval=800 --serverNss=1 --clientNss=1 --stepTime=0.1\n\nAfter investigating for a while, I realized that the crash is not caused by my changes, but by an erroneous (to me) behavior in a corner case disclosed by the example.\n\nFrom the logs (which I can share) I noticed that no problems arise when the transmission of an A-MPDU fails repeatedly, until the maximum number of retries is reached and the transmission is aborted. The corner case is when the transmission of an A-MPDU fails repeatedly but at the last attempt a single MPDU (in an S-MPDU) is transmitted. In this case, the example crashes with:\n\nmsg=\"Max retries reached and m_longRetry not cleared properly. longRetry= 7\", file=../src/wifi/model/minstrel-ht-wifi-manager.cc, line=767\n\nThe difference with S-MPDU is that a normal ack is requested. Hence, when the ack timeout expires, MacLow::NormalAckTimeout calls WifiRemoteStationManager::ReportDataFailed, which increases the station long retry count by one, thus making it exceed the maximum number of retries and triggering the fatal error.\n\nI believe that MacLow::NormalAckTimeout should not call directly WifiRemoteStationManager::ReportDataFailed. Instead, much like MacLow::BlockAckTimeout does, it should let [Qos]Txop::MissedAck decide to call WifiRemoteStationManager::ReportDataFailed or WifiRemoteStationManager::ReportFinalDataFailed based on whether a retransmission is needed or not.\n\nI prepared this patch:\n\nhttps://gitlab.com/stavallo/ns-3-dev/commit/edd35921440d0a4a4fe3ba7826d62eab365d77f1\n\nand verified that all tests and examples pass with and without my aggregation rework.",
+        "state": "closed",
+        "created_at": "2019-01-24T17:14:05.617Z",
+        "updated_at": "2019-01-29T22:34:48.111Z",
+        "closed_at": "2019-01-29T22:34:48.090Z",
+        "closed_by": {
+            "id": 2791497,
+            "name": "Stefano Avallone",
+            "username": "stavallo",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/71c81e4dd6a9d2c38687c17365713c37?s=80&d=identicon",
+            "web_url": "https://gitlab.com/stavallo"
+        },
+        "labels": [
+            "module:wifi"
+        ],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 2791497,
+            "name": "Stefano Avallone",
+            "username": "stavallo",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/71c81e4dd6a9d2c38687c17365713c37?s=80&d=identicon",
+            "web_url": "https://gitlab.com/stavallo"
+        },
+        "assignee": null,
+        "user_notes_count": 2,
+        "merge_requests_count": 1,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/23",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/23",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/23/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/23/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#23",
+            "relative": "#23",
+            "full": "nsnam/ns-3-dev#23"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 136262776,
+                "type": null,
+                "body": "changed title from **MacLow::NormalAckTimeout should not call WifiRemoteStationManager::ReportDataFailed** to **{+wifi: +}MacLow::NormalAckTimeout should not call WifiRemoteStationManager::ReportDataFailed**",
+                "attachment": null,
+                "author": {
+                    "id": 3148397,
+                    "name": "Sebastien Deronne",
+                    "username": "sderonne",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                    "web_url": "https://gitlab.com/sderonne"
+                },
+                "created_at": "2019-01-29T21:23:30.891Z",
+                "updated_at": "2019-01-29T21:23:30.891Z",
+                "system": true,
+                "noteable_id": 17640493,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 23,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136263394,
+                "type": null,
+                "body": "@stavallo OK for me to push this change, thanks.",
+                "attachment": null,
+                "author": {
+                    "id": 3148397,
+                    "name": "Sebastien Deronne",
+                    "username": "sderonne",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                    "web_url": "https://gitlab.com/sderonne"
+                },
+                "created_at": "2019-01-29T21:27:29.753Z",
+                "updated_at": "2019-01-29T21:27:29.753Z",
+                "system": false,
+                "noteable_id": 17640493,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 23,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136263422,
+                "type": null,
+                "body": "mentioned in merge request !18",
+                "attachment": null,
+                "author": {
+                    "id": 3148397,
+                    "name": "Sebastien Deronne",
+                    "username": "sderonne",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                    "web_url": "https://gitlab.com/sderonne"
+                },
+                "created_at": "2019-01-29T21:27:41.731Z",
+                "updated_at": "2019-01-29T21:27:41.731Z",
+                "system": true,
+                "noteable_id": 17640493,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 23,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136263423,
+                "type": null,
+                "body": "created merge request !18 to address this issue",
+                "attachment": null,
+                "author": {
+                    "id": 3148397,
+                    "name": "Sebastien Deronne",
+                    "username": "sderonne",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                    "web_url": "https://gitlab.com/sderonne"
+                },
+                "created_at": "2019-01-29T21:27:41.735Z",
+                "updated_at": "2019-01-29T21:27:41.735Z",
+                "system": true,
+                "noteable_id": 17640493,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 23,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136278466,
+                "type": null,
+                "body": "mentioned in merge request !19",
+                "attachment": null,
+                "author": {
+                    "id": 2791497,
+                    "name": "Stefano Avallone",
+                    "username": "stavallo",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/71c81e4dd6a9d2c38687c17365713c37?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/stavallo"
+                },
+                "created_at": "2019-01-29T22:07:01.627Z",
+                "updated_at": "2019-01-29T22:07:01.627Z",
+                "system": true,
+                "noteable_id": 17640493,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 23,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136283310,
+                "type": null,
+                "body": "Pushed, thanks.",
+                "attachment": null,
+                "author": {
+                    "id": 2791497,
+                    "name": "Stefano Avallone",
+                    "username": "stavallo",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/71c81e4dd6a9d2c38687c17365713c37?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/stavallo"
+                },
+                "created_at": "2019-01-29T22:34:47.734Z",
+                "updated_at": "2019-01-29T22:34:47.734Z",
+                "system": false,
+                "noteable_id": 17640493,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 23,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136283311,
+                "type": null,
+                "body": "closed",
+                "attachment": null,
+                "author": {
+                    "id": 2791497,
+                    "name": "Stefano Avallone",
+                    "username": "stavallo",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/71c81e4dd6a9d2c38687c17365713c37?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/stavallo"
+                },
+                "created_at": "2019-01-29T22:34:48.126Z",
+                "updated_at": "2019-01-29T22:34:48.126Z",
+                "system": true,
+                "noteable_id": 17640493,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 23,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920013.608825,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "e43fc579f93e195723250531ddd3adec43e7b786",
+    "updated_on": 1548864131.413,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "17578844",
+        "owner": "nsnam",
+        "iid": 21,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 17578844,
+        "iid": 21,
+        "project_id": 7128405,
+        "title": "'waf configure...' command line including the '--enable-tests' option causes  a subsequent build break when using clang++",
+        "description": "```\nPlatform: Linux (Ubuntu 18.10, 64-bit), all updates current as of 01/22/19.  \nHW: x86-64  \nClang++ version : 7.0.0-3 (tags/RELEASE_700/final), Target: x86_64-pc-linux-gnu  \nNS3 Source: ns-allinone-3.29.tar.bz2  \n```\n\nwaf configure command line: CXX=clang++ ./waf configure --enable-tests --enable-examples\n\nConfiguring and building NS3 with the above command-line causes a build break in the test code:\n\n=== BEGIN SNIPPET ===\n```\n./src/core/test/ptr-test-suite.cc:185:7: error: explicitly assigning value of variable of type 'Ptr<ns3::tests::NoCount>' to itself [-Werror,-Wself-assign-overloaded]\n\n    p = p;\n\n    ~ ^ ~\n\n1 error generated.\n```\n=== END SNIPPET ===\n\nThis failure is not seen with g++ shipped with ubuntu 18.10 (g++ version: (Ubuntu 8.2.0-7ubuntu1) 8.2.0).",
+        "state": "closed",
+        "created_at": "2019-01-22T22:34:35.987Z",
+        "updated_at": "2019-01-30T16:02:11.413Z",
+        "closed_at": "2019-01-30T16:02:11.390Z",
+        "closed_by": {
+            "id": 2478411,
+            "name": "N.",
+            "username": "natale-p",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/e33019e1a35ee6c6f38175dc0f4d3cb1?s=80&d=identicon",
+            "web_url": "https://gitlab.com/natale-p"
+        },
+        "labels": [],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 3435595,
+            "name": "Dev Null",
+            "username": "dnz42",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/09423adb1191c7e602de83c7daf2c357?s=80&d=identicon",
+            "web_url": "https://gitlab.com/dnz42"
+        },
+        "assignee": null,
+        "user_notes_count": 2,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/21",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/21",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/21/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/21/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#21",
+            "relative": "#21",
+            "full": "nsnam/ns-3-dev#21"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 134561755,
+                "type": null,
+                "body": "I have a patch for this, I will push it as soon as possible today or tomorrow.",
+                "attachment": null,
+                "author": {
+                    "id": 2478411,
+                    "name": "N.",
+                    "username": "natale-p",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/e33019e1a35ee6c6f38175dc0f4d3cb1?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/natale-p"
+                },
+                "created_at": "2019-01-24T13:36:38.926Z",
+                "updated_at": "2019-01-24T13:36:38.926Z",
+                "system": false,
+                "noteable_id": 17578844,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 21,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136635216,
+                "type": null,
+                "body": "Sorry for the delay, committed in 647218de176c1e5f5911345a4bb349f8dd516c61",
+                "attachment": null,
+                "author": {
+                    "id": 2478411,
+                    "name": "N.",
+                    "username": "natale-p",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/e33019e1a35ee6c6f38175dc0f4d3cb1?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/natale-p"
+                },
+                "created_at": "2019-01-30T16:02:10.983Z",
+                "updated_at": "2019-01-30T16:02:10.983Z",
+                "system": false,
+                "noteable_id": 17578844,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 21,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136635222,
+                "type": null,
+                "body": "closed",
+                "attachment": null,
+                "author": {
+                    "id": 2478411,
+                    "name": "N.",
+                    "username": "natale-p",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/e33019e1a35ee6c6f38175dc0f4d3cb1?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/natale-p"
+                },
+                "created_at": "2019-01-30T16:02:11.432Z",
+                "updated_at": "2019-01-30T16:02:11.432Z",
+                "system": true,
+                "noteable_id": 17578844,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 21,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920016.885209,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "336897152568aa6ada14839762b7cdeac7fed7bf",
+    "updated_on": 1550822002.603,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "18263551",
+        "owner": "nsnam",
+        "iid": 29,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 18263551,
+        "iid": 29,
+        "project_id": 7128405,
+        "title": "build: add option to compile static binaries",
+        "description": "Existing option `--enable-static` creates static libraries, but there is no way to link binaries statically with all required system libraries.",
+        "state": "opened",
+        "created_at": "2019-02-15T11:24:45.537Z",
+        "updated_at": "2019-02-22T07:53:22.603Z",
+        "closed_at": null,
+        "closed_by": null,
+        "labels": [
+            "build system"
+        ],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 1262351,
+            "name": "Alexander Krotov",
+            "username": "link2xt",
+            "state": "active",
+            "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+            "web_url": "https://gitlab.com/link2xt"
+        },
+        "assignee": null,
+        "user_notes_count": 3,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/29",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/29",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/29/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/29/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#29",
+            "relative": "#29",
+            "full": "nsnam/ns-3-dev#29"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 143593113,
+                "type": null,
+                "body": "Do you mean to build a static version of example programs?",
+                "attachment": null,
+                "author": {
+                    "id": 2478411,
+                    "name": "N.",
+                    "username": "natale-p",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/e33019e1a35ee6c6f38175dc0f4d3cb1?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/natale-p"
+                },
+                "created_at": "2019-02-21T11:13:46.685Z",
+                "updated_at": "2019-02-21T11:13:46.685Z",
+                "system": false,
+                "noteable_id": 18263551,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 29,
+                "award_emoji_data": []
+            },
+            {
+                "id": 143610041,
+                "type": null,
+                "body": "Yes, I want to build static versions of examples and programs in scratch/ so I can run them on a cluster of other machines that don't have NS-3 (and especially my version of NS-3) installed.",
+                "attachment": null,
+                "author": {
+                    "id": 1262351,
+                    "name": "Alexander Krotov",
+                    "username": "link2xt",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+                    "web_url": "https://gitlab.com/link2xt"
+                },
+                "created_at": "2019-02-21T11:58:13.820Z",
+                "updated_at": "2019-02-21T11:58:13.820Z",
+                "system": false,
+                "noteable_id": 18263551,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 29,
+                "award_emoji_data": []
+            },
+            {
+                "id": 143915121,
+                "type": null,
+                "body": "Looks like it compiles NS-3 statically, but other system libraries are still linked dynamically.",
+                "attachment": null,
+                "author": {
+                    "id": 1262351,
+                    "name": "Alexander Krotov",
+                    "username": "link2xt",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+                    "web_url": "https://gitlab.com/link2xt"
+                },
+                "created_at": "2019-02-22T07:53:22.584Z",
+                "updated_at": "2019-02-22T07:53:22.584Z",
+                "system": false,
+                "noteable_id": 18263551,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 29,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920018.465152,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "5aaeb29ad112dd52aa6c0c56c7054ba1fd688874",
+    "updated_on": 1550884145.34,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "18528901",
+        "owner": "nsnam",
+        "iid": 31,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 18528901,
+        "iid": 31,
+        "project_id": 7128405,
+        "title": "Openflow fails to find Boost.Signals when using Boost 1.69+",
+        "description": "Boost.Signals was removed in Boost 1.69, which is required to build the openflow module. Boost.Signals2, a header-only library has replaced it. Another issue that this exposes is that disabled modules still add their required Boost libraries to the list to find -- it looks like a check to ensure a module is enabled needs to be done before the call to required_boost_libs; currently the only fix is to use an older version of Boost, or deleting the openflow module folder.",
+        "state": "opened",
+        "created_at": "2019-02-23T00:54:00.432Z",
+        "updated_at": "2019-02-23T01:09:05.340Z",
+        "closed_at": null,
+        "closed_by": null,
+        "labels": [],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 2257784,
+            "name": "Ryan Mast",
+            "username": "nightlark",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/80a6219c92437da8f2ebf14c66be30cc?s=80&d=identicon",
+            "web_url": "https://gitlab.com/nightlark"
+        },
+        "assignee": null,
+        "user_notes_count": 1,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/31",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/31",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/31/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/31/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#31",
+            "relative": "#31",
+            "full": "nsnam/ns-3-dev#31"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 144219897,
+                "type": null,
+                "body": "Has anyone tried to build it against Boost.Signals2?",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-02-23T01:09:05.321Z",
+                "updated_at": "2019-02-23T01:09:05.321Z",
+                "system": false,
+                "noteable_id": 18528901,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 31,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920023.112141,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "3d9655b779fa955ae6854771c69b306afc9fea73",
+    "updated_on": 1551043665.564,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "17825124",
+        "owner": "nsnam",
+        "iid": 25,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 17825124,
+        "iid": 25,
+        "project_id": 7128405,
+        "title": "spectrum: Simulation using spectrum show random results for the same configuration due to order of PHYs stored in MultiModelSpectrumChannel",
+        "description": "After some randomness we had in 11ax simulations, I realized that the issue is in the spectrum model.\n\nIn the MultiModelSpectrumChannel::AddRx, the PHY of each node is added in a std::set.\nThe problem is that this is stored each time in a different order (I think it is ordered by memory address).\nAs a result, when we call the propagation loss model to compute the rx power, this applies to a different rx node for another simulation run.\n\nMy proposal is that we should not use a std::set (I do not see the benefit of this here), but a std::vector instead (pushing back a new PHY). This way there are always ordered the same way (from node 0 till last node), and I could verify the simulation results are always the same when the same parameters are provided.",
+        "state": "closed",
+        "created_at": "2019-01-30T21:33:30.278Z",
+        "updated_at": "2019-02-24T21:27:45.564Z",
+        "closed_at": "2019-02-24T21:27:45.542Z",
+        "closed_by": {
+            "id": 3148397,
+            "name": "Sebastien Deronne",
+            "username": "sderonne",
+            "state": "active",
+            "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+            "web_url": "https://gitlab.com/sderonne"
+        },
+        "labels": [
+            "module:spectrum"
+        ],
+        "milestone": null,
+        "assignees": [
+            {
+                "id": 3148397,
+                "name": "Sebastien Deronne",
+                "username": "sderonne",
+                "state": "active",
+                "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                "web_url": "https://gitlab.com/sderonne"
+            }
+        ],
+        "author": {
+            "id": 3148397,
+            "name": "Sebastien Deronne",
+            "username": "sderonne",
+            "state": "active",
+            "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+            "web_url": "https://gitlab.com/sderonne"
+        },
+        "assignee": {
+            "id": 3148397,
+            "name": "Sebastien Deronne",
+            "username": "sderonne",
+            "state": "active",
+            "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+            "web_url": "https://gitlab.com/sderonne"
+        },
+        "user_notes_count": 2,
+        "merge_requests_count": 1,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/25",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/25",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/25/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/25/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#25",
+            "relative": "#25",
+            "full": "nsnam/ns-3-dev#25"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 136729191,
+                "type": null,
+                "body": "mentioned in merge request !21",
+                "attachment": null,
+                "author": {
+                    "id": 3148397,
+                    "name": "Sebastien Deronne",
+                    "username": "sderonne",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                    "web_url": "https://gitlab.com/sderonne"
+                },
+                "created_at": "2019-01-30T21:33:38.853Z",
+                "updated_at": "2019-01-30T21:33:38.853Z",
+                "system": true,
+                "noteable_id": 17825124,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 25,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136729192,
+                "type": null,
+                "body": "created merge request !21 to address this issue",
+                "attachment": null,
+                "author": {
+                    "id": 3148397,
+                    "name": "Sebastien Deronne",
+                    "username": "sderonne",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                    "web_url": "https://gitlab.com/sderonne"
+                },
+                "created_at": "2019-01-30T21:33:38.863Z",
+                "updated_at": "2019-01-30T21:33:38.863Z",
+                "system": true,
+                "noteable_id": 17825124,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 25,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136745748,
+                "type": null,
+                "body": "mentioned in merge request !22",
+                "attachment": null,
+                "author": {
+                    "id": 3148397,
+                    "name": "Sebastien Deronne",
+                    "username": "sderonne",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                    "web_url": "https://gitlab.com/sderonne"
+                },
+                "created_at": "2019-01-30T21:41:41.665Z",
+                "updated_at": "2019-01-30T21:41:41.665Z",
+                "system": true,
+                "noteable_id": 17825124,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 25,
+                "award_emoji_data": []
+            },
+            {
+                "id": 136862044,
+                "type": null,
+                "body": "`std::set` probably makes `AddRx` a bit faster, but it is not critical.\n\nIt is not the first time a similar bug is fixed in NS-3. I thought about deleting comparison operators for `Ptr`, but using pointers as map keys is still useful sometimes, for things like caches, where order doesn't matter.",
+                "attachment": null,
+                "author": {
+                    "id": 1262351,
+                    "name": "Alexander Krotov",
+                    "username": "link2xt",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+                    "web_url": "https://gitlab.com/link2xt"
+                },
+                "created_at": "2019-01-31T08:33:38.002Z",
+                "updated_at": "2019-01-31T08:33:38.002Z",
+                "system": false,
+                "noteable_id": 17825124,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 25,
+                "award_emoji_data": []
+            },
+            {
+                "id": 141897947,
+                "type": null,
+                "body": "mentioned in issue #14",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-02-16T02:23:21.179Z",
+                "updated_at": "2019-02-16T02:23:21.179Z",
+                "system": true,
+                "noteable_id": 17825124,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 25,
+                "award_emoji_data": []
+            },
+            {
+                "id": 144229027,
+                "type": null,
+                "body": "@sderonne  you mind to fix this directly and close it out, if it is a simple change?",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-02-23T04:41:16.577Z",
+                "updated_at": "2019-02-23T04:41:16.577Z",
+                "system": false,
+                "noteable_id": 17825124,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 25,
+                "award_emoji_data": []
+            },
+            {
+                "id": 144413143,
+                "type": null,
+                "body": "closed",
+                "attachment": null,
+                "author": {
+                    "id": 3148397,
+                    "name": "Sebastien Deronne",
+                    "username": "sderonne",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                    "web_url": "https://gitlab.com/sderonne"
+                },
+                "created_at": "2019-02-24T21:27:45.581Z",
+                "updated_at": "2019-02-24T21:27:45.581Z",
+                "system": true,
+                "noteable_id": 17825124,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 25,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920027.616394,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "e391cfce9b7deb43f16628e67a5c316930ef7ca0",
+    "updated_on": 1551580964.329,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "17945025",
+        "owner": "nsnam",
+        "iid": 26,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 17945025,
+        "iid": 26,
+        "project_id": 7128405,
+        "title": "wifi: detection threshold refactoring in WifiPhy is not documented properly",
+        "description": "After merging some of my code with the recent NS-3 version, I have noticed that results significantly improved in a previously problematic case. I have traced the improvement down to commit https://gitlab.com/nsnam/ns-3-dev/commit/822d5a10e4e5354bbec28dfb9d4d7331b900128c\n\n`CHANGES.html` documents attributes renaming, but some other things have changed.\n\nOne significant change is that `YansWifiChannel` drops signals below `RxSensitivity` before they reach the PHY. As a result, those signals are not accounted for in `InterferenceHelper`. I understand that it speeds up the simulation, but these signals can sum up to trigger CCA BUSY. Now that they are ignored, even a large number of signals below `RxSensitivity` will not trigger CCA BUSY state. It is not the case when `CcaEdThreshold` is significantly higher than `EnergyDetectionThreshold`, e.g. -110 vs -62, but I also run some experiments with high `EnergyDetectionThreshold`, comparable to `CcaEdThreshold`.\n\nThere are also some A-MPDU related changes in this commit which are also undocumented. @sderonne can you describe what that change is for?\n\nI am also going to try to revert the move of `RxSensitivity` from PHY to channel and see if I get results similar to previous one.",
+        "state": "closed",
+        "created_at": "2019-02-04T17:46:21.233Z",
+        "updated_at": "2019-03-03T02:42:44.329Z",
+        "closed_at": "2019-02-16T17:34:35.515Z",
+        "closed_by": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "labels": [
+            "module:wifi"
+        ],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 1262351,
+            "name": "Alexander Krotov",
+            "username": "link2xt",
+            "state": "active",
+            "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+            "web_url": "https://gitlab.com/link2xt"
+        },
+        "assignee": null,
+        "user_notes_count": 5,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/26",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/26",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/26/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/26/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#26",
+            "relative": "#26",
+            "full": "nsnam/ns-3-dev#26"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 138151895,
+                "type": null,
+                "body": "@link2xt Can you detail what you mean by A-MPDU related changes that have not been documented? I might have forgotten some of them.\nRxSensitivity is indeed something to speed up simulations. All those changes are the results of few discussions/investigations together with people from UW. Those changes should better reflect what happens with real hardware.\nI have a document explaining all this, but not sure I am allowed to provide it. Please check with Tom.",
+                "attachment": null,
+                "author": {
+                    "id": 3148397,
+                    "name": "Sebastien Deronne",
+                    "username": "sderonne",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                    "web_url": "https://gitlab.com/sderonne"
+                },
+                "created_at": "2019-02-04T19:14:06.098Z",
+                "updated_at": "2019-02-04T19:14:06.098Z",
+                "system": false,
+                "noteable_id": 17945025,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 26,
+                "award_emoji_data": []
+            },
+            {
+                "id": 138153800,
+                "type": null,
+                "body": "I do not think that the defaults are an issue; do you?  The sum of such signals can't possibly trigger energy detection.  \n\nI agree that the documentation misses stating that signals are discarded below RxSensitivity; would you like me to provide a patch or are you working on one?",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-02-04T19:23:48.063Z",
+                "updated_at": "2019-02-04T19:23:48.063Z",
+                "system": false,
+                "noteable_id": 17945025,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 26,
+                "award_emoji_data": []
+            },
+            {
+                "id": 138154935,
+                "type": null,
+                "body": "@tomhenderson Feel free to add documentation on this, thanks.",
+                "attachment": null,
+                "author": {
+                    "id": 3148397,
+                    "name": "Sebastien Deronne",
+                    "username": "sderonne",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                    "web_url": "https://gitlab.com/sderonne"
+                },
+                "created_at": "2019-02-04T19:28:58.318Z",
+                "updated_at": "2019-02-04T19:28:58.318Z",
+                "system": false,
+                "noteable_id": 17945025,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 26,
+                "award_emoji_data": []
+            },
+            {
+                "id": 138271525,
+                "type": null,
+                "body": "> Can you detail what you mean by A-MPDU related changes that have not been documented?\n\nLooks like it is just an indentation change in `WifiPhy::StartRx` due to removed `m_edThresholdW` comparison.",
+                "attachment": null,
+                "author": {
+                    "id": 1262351,
+                    "name": "Alexander Krotov",
+                    "username": "link2xt",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+                    "web_url": "https://gitlab.com/link2xt"
+                },
+                "created_at": "2019-02-05T08:23:01.699Z",
+                "updated_at": "2019-02-05T08:23:01.699Z",
+                "system": false,
+                "noteable_id": 17945025,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 26,
+                "award_emoji_data": []
+            },
+            {
+                "id": 141971427,
+                "type": null,
+                "body": "closed via commit 61cbb19e84ee497a238c750bc1820db87b3e1da9",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-02-16T17:34:35.566Z",
+                "updated_at": "2019-02-16T17:34:35.566Z",
+                "system": true,
+                "noteable_id": 17945025,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 26,
+                "award_emoji_data": []
+            },
+            {
+                "id": 141971861,
+                "type": null,
+                "body": "I pushed a documentation change in commit 61cbb19e that I believe addresses the issue and updates to the current state of the code; please reopen if not.",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-02-16T17:35:28.034Z",
+                "updated_at": "2019-02-16T17:35:28.034Z",
+                "system": false,
+                "noteable_id": 17945025,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 26,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920029.798413,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "251814ef277bc8b316fb2bb44d3efe3e592f60e9",
+    "updated_on": 1551923080.006,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "18860053",
+        "owner": "nsnam",
+        "iid": 34,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 18860053,
+        "iid": 34,
+        "project_id": 7128405,
+        "title": "nsnam: Update Contributing Code discussion",
+        "description": "The [Contributing Code](https://www.nsnam.org/develop/contributing-code/) discussion needs to be updated to describe submitting pull requests on GitLab.\n\nThere is a short summary on the wiki page for [Git Migration](https://www.nsnam.org/wiki/Git_Migration#Code_reviews)",
+        "state": "opened",
+        "created_at": "2019-03-07T00:37:34.293Z",
+        "updated_at": "2019-03-07T01:44:40.006Z",
+        "closed_at": null,
+        "closed_by": null,
+        "labels": [],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 1138790,
+            "name": "Peter Barnes",
+            "username": "pdbj",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+            "web_url": "https://gitlab.com/pdbj"
+        },
+        "assignee": null,
+        "user_notes_count": 1,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/34",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/34",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/34/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/34/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#34",
+            "relative": "#34",
+            "full": "nsnam/ns-3-dev#34"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 148041366,
+                "type": null,
+                "body": "changed the description",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-03-07T00:44:59.601Z",
+                "updated_at": "2019-03-07T00:44:59.601Z",
+                "system": true,
+                "noteable_id": 18860053,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 34,
+                "award_emoji_data": []
+            },
+            {
+                "id": 148057291,
+                "type": null,
+                "body": "Agreed; I would like to move this page and other guidance regarding development (including copyright guidance and coding style) to a new 'user's manual' in Sphinx.  I will try to put together a concrete proposal (outline and some filled-in text) in the next week or two.",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-03-07T01:44:39.977Z",
+                "updated_at": "2019-03-07T01:44:39.977Z",
+                "system": false,
+                "noteable_id": 18860053,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 34,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920031.209707,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "46fe7bd6a44b388f7c41c3e81c0a26bee9b516e3",
+    "updated_on": 1552576351.081,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "19114208",
+        "owner": "nsnam",
+        "iid": 36,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 19114208,
+        "iid": 36,
+        "project_id": 7128405,
+        "title": "Trace source lookup failures are silently ignored",
+        "description": "I have replaced `return 0` at the end of `TypeId::LookupTraceSourceByName` with `NS_FATAL_ERROR` and ran the tests.\n\nI have immediately found some bugs, for example just fixed: https://gitlab.com/nsnam/ns-3-dev/commit/33819683896c12c906fac59b04ab0d78f7484654\n\nAnother problem is https://gitlab.com/nsnam/ns-3-dev/blob/33819683896c12c906fac59b04ab0d78f7484654/src/test/ns3wifi/wifi-interference-test-suite.cc#L211 `EndSync` trace does not exist anymore.\n\nThere are probably other problems like this, because now such errors are silently ignored. I am not sure if simply adding `NS_FATAL_ERROR` is the right solution, because someone might want to use general wildcard patterns such as \"*/*/*/SomeTrace\" that are not required to find a trace source for every object matching \"*/*/*\". Still, existence of such bugs as I have just found are an indication that API is not strict enough.",
+        "state": "opened",
+        "created_at": "2019-03-14T13:47:19.551Z",
+        "updated_at": "2019-03-14T15:12:31.081Z",
+        "closed_at": null,
+        "closed_by": null,
+        "labels": [
+            "module:core",
+            "module:wifi"
+        ],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 1262351,
+            "name": "Alexander Krotov",
+            "username": "link2xt",
+            "state": "active",
+            "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+            "web_url": "https://gitlab.com/link2xt"
+        },
+        "assignee": null,
+        "user_notes_count": 1,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/36",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/36",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/36/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/36/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#36",
+            "relative": "#36",
+            "full": "nsnam/ns-3-dev#36"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 150580595,
+                "type": null,
+                "body": "The permissiveness is indeed due to the possibility of wildcard failures (for which we do not want to enforce a match in such situations).\n\nWe could perform a periodic, manual audit and clean up such issues without adding anything to the code.  However, we could possibly add something like a new global value to optionally enable a check to enforce successful matches.  This could be used for automating the checks of our test code, and also allow users to turn it on for their own debugging.\n\nThere are two ways that users connect to trace sources, either by ObjectBase::TraceConnect() or by Config::Connect().  In the former, the method returns a bool so the user can check whether a connection was made.  In the latter, however, there is no way to check whether the connection succeeded.",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-03-14T15:12:31.012Z",
+                "updated_at": "2019-03-14T15:12:31.012Z",
+                "system": false,
+                "noteable_id": 19114208,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 36,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920037.018472,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "f4fe3df997c8a9b29c85d8ed70b1f0c58108c5ab",
+    "updated_on": 1553078690.022,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "19189745",
+        "owner": "nsnam",
+        "iid": 37,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 19189745,
+        "iid": 37,
+        "project_id": 7128405,
+        "title": "Missing documentation for using ns-3 Python API",
+        "description": "In my learning to use NS-3, preferring Python for quick scripting, I was very much left to intuition and observation (and sometimes trial-and-error) in finding out the correct modules and sub-modules, and their methods in ns-3 while trying to convert a program in C++ to Python. \n\nIt would be nice to have documentation for the Python API for ns-3. Or maybe if it is written somewhere already then we could probably link it from somewhere prominent.",
+        "state": "opened",
+        "created_at": "2019-03-17T18:58:19.492Z",
+        "updated_at": "2019-03-20T10:44:50.022Z",
+        "closed_at": null,
+        "closed_by": null,
+        "labels": [],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 2395963,
+            "name": "Anubhav Singh",
+            "username": "xprilion",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/a7cb65695fb2f8b52ea5917dca40d2d4?s=80&d=identicon",
+            "web_url": "https://gitlab.com/xprilion"
+        },
+        "assignee": null,
+        "user_notes_count": 3,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/37",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/37",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/37/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/37/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#37",
+            "relative": "#37",
+            "full": "nsnam/ns-3-dev#37"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 151326496,
+                "type": null,
+                "body": "changed the description",
+                "attachment": null,
+                "author": {
+                    "id": 2395963,
+                    "name": "Anubhav Singh",
+                    "username": "xprilion",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/a7cb65695fb2f8b52ea5917dca40d2d4?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/xprilion"
+                },
+                "created_at": "2019-03-17T18:59:05.358Z",
+                "updated_at": "2019-03-17T18:59:05.358Z",
+                "system": true,
+                "noteable_id": 19189745,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 37,
+                "award_emoji_data": []
+            },
+            {
+                "id": 151326571,
+                "type": null,
+                "body": "changed the description",
+                "attachment": null,
+                "author": {
+                    "id": 2395963,
+                    "name": "Anubhav Singh",
+                    "username": "xprilion",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/a7cb65695fb2f8b52ea5917dca40d2d4?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/xprilion"
+                },
+                "created_at": "2019-03-17T18:59:46.565Z",
+                "updated_at": "2019-03-17T18:59:46.565Z",
+                "system": true,
+                "noteable_id": 19189745,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 37,
+                "award_emoji_data": []
+            },
+            {
+                "id": 151326939,
+                "type": null,
+                "body": "Would like to be assigned to and work on the issue! :slight\\_smile:",
+                "attachment": null,
+                "author": {
+                    "id": 2395963,
+                    "name": "Anubhav Singh",
+                    "username": "xprilion",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/a7cb65695fb2f8b52ea5917dca40d2d4?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/xprilion"
+                },
+                "created_at": "2019-03-17T19:05:07.861Z",
+                "updated_at": "2019-03-17T19:05:07.861Z",
+                "system": false,
+                "noteable_id": 19189745,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 37,
+                "award_emoji_data": []
+            },
+            {
+                "id": 151751341,
+                "type": null,
+                "body": "It occurs to me that we exclude the bindings directories from the Doxgygen API build.  I wonder if that would provide any useful information?  \n\nTo try, in `doc/doxygen.conf` edit this section:\n```\nEXCLUDE_PATTERNS       = */.hg/* \\\n                         */bindings/*\n```\n and delete the `bindings` line.",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-03-18T19:45:15.733Z",
+                "updated_at": "2019-03-18T19:45:15.733Z",
+                "system": false,
+                "noteable_id": 19189745,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 37,
+                "award_emoji_data": []
+            },
+            {
+                "id": 152385510,
+                "type": null,
+                "body": "Hey @pdbj thanks for pointing that out! I did try doing as suggested, however, there was still not much information about how to convert C++ programs to Python for NS-3. I wonder if it is lying around in plain sight but I'm unable to understand it. I shall study some more and post my findings here in a day or two!",
+                "attachment": null,
+                "author": {
+                    "id": 2395963,
+                    "name": "Anubhav Singh",
+                    "username": "xprilion",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/a7cb65695fb2f8b52ea5917dca40d2d4?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/xprilion"
+                },
+                "created_at": "2019-03-20T10:44:49.970Z",
+                "updated_at": "2019-03-20T10:44:49.970Z",
+                "system": false,
+                "noteable_id": 19189745,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 37,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920040.537429,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "a44ec1be5b7e40910abe278d8b9ea95d9729b54e",
+    "updated_on": 1554181520.038,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "19596423",
+        "owner": "nsnam",
+        "iid": 43,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 19596423,
+        "iid": 43,
+        "project_id": 7128405,
+        "title": "Check whether ObjectFactory has been configured",
+        "description": "Would like a new method to check whether an ObjectFactory has been configured with a TypeId.",
+        "state": "closed",
+        "created_at": "2019-03-31T16:53:50.195Z",
+        "updated_at": "2019-04-02T05:05:20.038Z",
+        "closed_at": "2019-04-02T05:05:19.896Z",
+        "closed_by": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "labels": [
+            "module:core"
+        ],
+        "milestone": null,
+        "assignees": [
+            {
+                "id": 1138790,
+                "name": "Peter Barnes",
+                "username": "pdbj",
+                "state": "active",
+                "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                "web_url": "https://gitlab.com/pdbj"
+            }
+        ],
+        "author": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "assignee": {
+            "id": 1138790,
+            "name": "Peter Barnes",
+            "username": "pdbj",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+            "web_url": "https://gitlab.com/pdbj"
+        },
+        "user_notes_count": 0,
+        "merge_requests_count": 1,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/43",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/43",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/43/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/43/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#43",
+            "relative": "#43",
+            "full": "nsnam/ns-3-dev#43"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 155823959,
+                "type": null,
+                "body": "mentioned in merge request !46",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-03-31T16:57:20.002Z",
+                "updated_at": "2019-03-31T16:57:20.002Z",
+                "system": true,
+                "noteable_id": 19596423,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 43,
+                "award_emoji_data": []
+            },
+            {
+                "id": 156272795,
+                "type": null,
+                "body": "closed via merge request !46",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-04-02T05:05:19.891Z",
+                "updated_at": "2019-04-02T05:05:19.891Z",
+                "system": true,
+                "noteable_id": 19596423,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 43,
+                "award_emoji_data": []
+            },
+            {
+                "id": 156272796,
+                "type": null,
+                "body": "closed via commit d4cd46fbfef5fcd00bcfd000a76483d2ffff6e10",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-02T05:05:19.948Z",
+                "updated_at": "2019-04-02T05:05:19.948Z",
+                "system": true,
+                "noteable_id": 19596423,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 43,
+                "award_emoji_data": []
+            },
+            {
+                "id": 156272797,
+                "type": null,
+                "body": "mentioned in commit 30e214a2c3f69c36a1495f52469feec993d0030a",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-04-02T05:05:19.982Z",
+                "updated_at": "2019-04-02T05:05:19.982Z",
+                "system": true,
+                "noteable_id": 19596423,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 43,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920043.938504,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "359e3a818a69093f5570f99f15915b7edc1bf62b",
+    "updated_on": 1554330434.201,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "19588417",
+        "owner": "nsnam",
+        "iid": 42,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 19588417,
+        "iid": 42,
+        "project_id": 7128405,
+        "title": "wifi SimpleFrameCaptureModel does not use CaptureWindow",
+        "description": "Wi-Fi SimpleFrameCaptureModel disregards the value of the CaptureWindow in the base class FrameCaptureModel.",
+        "state": "closed",
+        "created_at": "2019-03-31T01:31:16.932Z",
+        "updated_at": "2019-04-03T22:27:14.201Z",
+        "closed_at": "2019-04-03T22:27:14.169Z",
+        "closed_by": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "labels": [
+            "module:wifi"
+        ],
+        "milestone": null,
+        "assignees": [
+            {
+                "id": 3148397,
+                "name": "Sebastien Deronne",
+                "username": "sderonne",
+                "state": "active",
+                "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+                "web_url": "https://gitlab.com/sderonne"
+            }
+        ],
+        "author": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "assignee": {
+            "id": 3148397,
+            "name": "Sebastien Deronne",
+            "username": "sderonne",
+            "state": "active",
+            "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/3148397/avatar.png",
+            "web_url": "https://gitlab.com/sderonne"
+        },
+        "user_notes_count": 0,
+        "merge_requests_count": 1,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/42",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/42",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/42/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/42/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#42",
+            "relative": "#42",
+            "full": "nsnam/ns-3-dev#42"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 155765919,
+                "type": null,
+                "body": "mentioned in merge request !44",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-03-31T01:33:49.426Z",
+                "updated_at": "2019-03-31T01:33:49.426Z",
+                "system": true,
+                "noteable_id": 19588417,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 42,
+                "award_emoji_data": []
+            },
+            {
+                "id": 157190432,
+                "type": null,
+                "body": "closed via commit 5623f8ef82b768b9468a4e6e41c43391e77172ba",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-03T22:27:14.216Z",
+                "updated_at": "2019-04-03T22:27:14.216Z",
+                "system": true,
+                "noteable_id": 19588417,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 42,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920046.151366,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "c84e7f4d75ea4c2aac75cf8b4d4f203b89057360",
+    "updated_on": 1554334676.654,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "17321790",
+        "owner": "nsnam",
+        "iid": 18,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 17321790,
+        "iid": 18,
+        "project_id": 7128405,
+        "title": "problem with integrating NSC with ns3-3.29",
+        "description": "hi there,\nI configured and built ns3-3.29 via donloading ns-allinone-3.29.tar.bz2, and I am following the [Network Simulation in ns3 manual](https://www.nsnam.org/docs/release/3.2/manual/manual_45.html), but when I use the command `./waf configure --enable-nsc`, it complains about the invalid parameter \"--enable-nsc\". I even cloned the nsc repo and tried to build it but with no success. \nhow should I go about building and integrating nsc into ns3?",
+        "state": "closed",
+        "created_at": "2019-01-14T11:44:44.053Z",
+        "updated_at": "2019-04-03T23:37:56.654Z",
+        "closed_at": "2019-04-03T23:37:56.634Z",
+        "closed_by": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "labels": [],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 743085,
+            "name": "Mahdad-Baghani",
+            "username": "Mahdad-Baghani",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/81493da71fe04ae02bfd8893a1ac49ef?s=80&d=identicon",
+            "web_url": "https://gitlab.com/Mahdad-Baghani"
+        },
+        "assignee": null,
+        "user_notes_count": 2,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/18",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/18",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/18/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/18/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#18",
+            "relative": "#18",
+            "full": "nsnam/ns-3-dev#18"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 134579594,
+                "type": null,
+                "body": "Hi,\n\nPlease indicate all the commands that you execute, as well as their output.\n\nHowever, I believe this is a question for the ns-3-user mailing list.",
+                "attachment": null,
+                "author": {
+                    "id": 2478411,
+                    "name": "N.",
+                    "username": "natale-p",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/e33019e1a35ee6c6f38175dc0f4d3cb1?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/natale-p"
+                },
+                "created_at": "2019-01-24T14:25:29.631Z",
+                "updated_at": "2019-01-24T14:25:29.631Z",
+                "system": false,
+                "noteable_id": 17321790,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 18,
+                "award_emoji_data": []
+            },
+            {
+                "id": 157198490,
+                "type": null,
+                "body": "Please see the documentation; there is no --enable-nsc option but there is a --with-nsc option.\n\nhttps://www.nsnam.org/docs/models/html/tcp.html#configuring-and-downloading",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-03T23:37:56.272Z",
+                "updated_at": "2019-04-03T23:37:56.272Z",
+                "system": false,
+                "noteable_id": 17321790,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 18,
+                "award_emoji_data": []
+            },
+            {
+                "id": 157198491,
+                "type": null,
+                "body": "closed",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-03T23:37:56.676Z",
+                "updated_at": "2019-04-03T23:37:56.676Z",
+                "system": true,
+                "noteable_id": 17321790,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 18,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920052.327918,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "bfcdd8366538a2f5969e0712d03ffe2f96bd3ed3",
+    "updated_on": 1555088950.747,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "19951779",
+        "owner": "nsnam",
+        "iid": 47,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 19951779,
+        "iid": 47,
+        "project_id": 7128405,
+        "title": "core: Ptr::operator -> discards constness",
+        "description": "Simple test code:\n\n```\n  const Ptr<MacLow> ptr = Create<MacLow> ();\n  ptr->SetAckTimeout (Seconds (10));     // BUILDS OK\n  (*ptr).SetAckTimeout (Seconds (10));   // BUILD ERROR\n```\n\nA constant of type `const Ptr<T>` should not allow to perform non-const operations on the pointed object (of type T). In the example above, none of the calls to SetAckTimeout (a non-const method) should be allowed by the compiler. The problem is clearly caused by the different declaration of the two operators. The declaration of Ptr::operator * seems correct:\n\n```\n  const T &operator * () const;\n  T &operator * ();\n```\n\nwhile the declaration of Ptr::operator -> seems incorrect:\n\n```\n  T *operator -> () const;   // Should be: const T *operator -> () const\n  T *operator -> ();\n```\n\nChanging the declaration of operator-> as shown above clearly implies to fix other parts of the code (mainly some functions declared as const are actually non-const). I started fixing the other classes accordingly, but I stopped because I wanted to get a feedback on this issue. If the issue is confirmed, I will prepare a merge request to fix it.",
+        "state": "closed",
+        "created_at": "2019-04-11T08:54:35.879Z",
+        "updated_at": "2019-04-12T17:09:10.747Z",
+        "closed_at": "2019-04-12T17:09:10.718Z",
+        "closed_by": {
+            "id": 2791497,
+            "name": "Stefano Avallone",
+            "username": "stavallo",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/71c81e4dd6a9d2c38687c17365713c37?s=80&d=identicon",
+            "web_url": "https://gitlab.com/stavallo"
+        },
+        "labels": [],
+        "milestone": null,
+        "assignees": [
+            {
+                "id": 1138790,
+                "name": "Peter Barnes",
+                "username": "pdbj",
+                "state": "active",
+                "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                "web_url": "https://gitlab.com/pdbj"
+            }
+        ],
+        "author": {
+            "id": 2791497,
+            "name": "Stefano Avallone",
+            "username": "stavallo",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/71c81e4dd6a9d2c38687c17365713c37?s=80&d=identicon",
+            "web_url": "https://gitlab.com/stavallo"
+        },
+        "assignee": {
+            "id": 1138790,
+            "name": "Peter Barnes",
+            "username": "pdbj",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+            "web_url": "https://gitlab.com/pdbj"
+        },
+        "user_notes_count": 7,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/47",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/47",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/47/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/47/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#47",
+            "relative": "#47",
+            "full": "nsnam/ns-3-dev#47"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 159722556,
+                "type": null,
+                "body": "`Ptr<const MacLow> ptr` should not allow to modify MacLow. `const Ptr<MacLow>` means that the pointer is constant, but not the object it is pointing to.",
+                "attachment": null,
+                "author": {
+                    "id": 1262351,
+                    "name": "Alexander Krotov",
+                    "username": "link2xt",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+                    "web_url": "https://gitlab.com/link2xt"
+                },
+                "created_at": "2019-04-11T10:00:06.001Z",
+                "updated_at": "2019-04-11T10:00:06.001Z",
+                "system": false,
+                "noteable_id": 19951779,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 47,
+                "award_emoji_data": []
+            },
+            {
+                "id": 159723555,
+                "type": null,
+                "body": "It is the same as `MacLow * const ptr` vs `const MacLow * ptr`.",
+                "attachment": null,
+                "author": {
+                    "id": 1262351,
+                    "name": "Alexander Krotov",
+                    "username": "link2xt",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+                    "web_url": "https://gitlab.com/link2xt"
+                },
+                "created_at": "2019-04-11T10:02:37.974Z",
+                "updated_at": "2019-04-11T10:02:37.974Z",
+                "system": false,
+                "noteable_id": 19951779,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 47,
+                "award_emoji_data": []
+            },
+            {
+                "id": 159748760,
+                "type": null,
+                "body": "I do not know what the original intention was, but still operator* and operator-> shall behave the same way. The simple example above shows that this is not currently the case and this should be fixed in my opinion.\n\nAlso, I believe that both `Ptr<const T> ptr` and `const Ptr<T> ptr` should behave as `const T * ptr` (i.e., the behavior of Ptr::operator * () is the correct one). Consider the following situation:\n\n```\nclass T\n{\npublic:\n  void foo (void);  // non-const\n};\n\nclass C\n{\nprivate:\n  std::vector<Ptr<T>> m_vector;\npublic:\n  std::vector<Ptr<T>>::const_iterator begin (void) const;\n  std::vector<Ptr<T>>::const_iterator end (void) const;\n};\n\nPtr<const C> c = Create<const C> ();\n```\n\nDo you expect that it is possible through `c` to call the `foo()` method on the elements of the vector? I would say no.\n\nInstead, the following code is currently allowed:\n\n```\nfor (auto& el : *PeekPointer (c))\n{\n  el->foo ();\n}\n```\n\nThe following code is (correctly, in my opinion) not allowed:\n\n```\nfor (auto& el : *PeekPointer (c))\n{\n  (*el).foo ();\n}\n```\n\nThis can be tested in ns-3 by using T=WifiMacQueueItem and C=WifiPsdu.",
+                "attachment": null,
+                "author": {
+                    "id": 2791497,
+                    "name": "Stefano Avallone",
+                    "username": "stavallo",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/71c81e4dd6a9d2c38687c17365713c37?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/stavallo"
+                },
+                "created_at": "2019-04-11T10:51:02.995Z",
+                "updated_at": "2019-04-11T10:52:09.790Z",
+                "system": false,
+                "noteable_id": 19951779,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 47,
+                "award_emoji_data": []
+            },
+            {
+                "id": 159980640,
+                "type": null,
+                "body": "I agree with Alexander.",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-11T19:24:24.519Z",
+                "updated_at": "2019-04-11T19:24:24.519Z",
+                "system": false,
+                "noteable_id": 19951779,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 47,
+                "award_emoji_data": []
+            },
+            {
+                "id": 160004585,
+                "type": null,
+                "body": "> Do you expect that it is possible through `c` to call the `foo()` method on the elements of the vector? I would say no.\n\nI expect that you can. `const_iterator` means that you can't modify `std::vector` and the pointers inside it. If you want to prevent modification of the objects, you need to return `std::vector<Ptr<const T>>::const_iterator`.\n\n> The following code is (correctly, in my opinion) not allowed: ...\n\nI think it should be allowed. I would rather change `const T &operator * () const;` to `T &operator * () const;`.\n\nSee also [standard shared pointer implementation](https://en.cppreference.com/w/cpp/memory/shared_ptr/operator*).",
+                "attachment": null,
+                "author": {
+                    "id": 1262351,
+                    "name": "Alexander Krotov",
+                    "username": "link2xt",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+                    "web_url": "https://gitlab.com/link2xt"
+                },
+                "created_at": "2019-04-11T21:06:37.136Z",
+                "updated_at": "2019-04-11T21:06:46.001Z",
+                "system": false,
+                "noteable_id": 19951779,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 47,
+                "award_emoji_data": []
+            },
+            {
+                "id": 160013921,
+                "type": null,
+                "body": "mentioned in merge request !53",
+                "attachment": null,
+                "author": {
+                    "id": 1262351,
+                    "name": "Alexander Krotov",
+                    "username": "link2xt",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+                    "web_url": "https://gitlab.com/link2xt"
+                },
+                "created_at": "2019-04-11T21:59:05.559Z",
+                "updated_at": "2019-04-11T21:59:05.559Z",
+                "system": true,
+                "noteable_id": 19951779,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 47,
+                "award_emoji_data": []
+            },
+            {
+                "id": 160014199,
+                "type": null,
+                "body": "I have created MR !53 that removes unnecessary `const`. It probably needs a testcase that fails on the current version of code.",
+                "attachment": null,
+                "author": {
+                    "id": 1262351,
+                    "name": "Alexander Krotov",
+                    "username": "link2xt",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/1262351/avatar.png",
+                    "web_url": "https://gitlab.com/link2xt"
+                },
+                "created_at": "2019-04-11T22:01:13.372Z",
+                "updated_at": "2019-04-11T22:01:13.372Z",
+                "system": false,
+                "noteable_id": 19951779,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 47,
+                "award_emoji_data": []
+            },
+            {
+                "id": 160080301,
+                "type": null,
+                "body": "Ok, I am now convinced. I was fooled by the different behavior of operators * and -> and I hoped for the simplest solution to my problem. In fact, if class C maintains a `std::vector<Ptr<T>>`, it is not immediate (I didn't think of it a lot, though) to return a `std::vector<Ptr<const T>>::const_iterator`. My goal would be to achieve that who owns a `Ptr<C>` can modify the elements of the vector (i.e., gets a `std::vector<Ptr<T>>::const_iterator`) and who owns a `Ptr<const C>` cannot modify the elements of the vector (i.e., gets a `std::vector<Ptr<const T>>::const_iterator`). I will need to think of a different way to achieve that...",
+                "attachment": null,
+                "author": {
+                    "id": 2791497,
+                    "name": "Stefano Avallone",
+                    "username": "stavallo",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/71c81e4dd6a9d2c38687c17365713c37?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/stavallo"
+                },
+                "created_at": "2019-04-12T06:17:59.012Z",
+                "updated_at": "2019-04-12T06:18:39.921Z",
+                "system": false,
+                "noteable_id": 19951779,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 47,
+                "award_emoji_data": []
+            },
+            {
+                "id": 160370548,
+                "type": null,
+                "body": "closed",
+                "attachment": null,
+                "author": {
+                    "id": 2791497,
+                    "name": "Stefano Avallone",
+                    "username": "stavallo",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/71c81e4dd6a9d2c38687c17365713c37?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/stavallo"
+                },
+                "created_at": "2019-04-12T17:09:10.767Z",
+                "updated_at": "2019-04-12T17:09:10.767Z",
+                "system": true,
+                "noteable_id": 19951779,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 47,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920104.911085,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "dcf77b4f79c1268de5a22edb9cebe2496006d781",
+    "updated_on": 1555874134.216,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "17284869",
+        "owner": "nsnam",
+        "iid": 14,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 17284869,
+        "iid": 14,
+        "project_id": 7128405,
+        "title": "build: Waf performance regression on macOS",
+        "description": "I have had some reasons to use a Mac this week and the performance of running even a simple program such as './waf --run sample-simulator' is dreadful.  It may take 1-3 minutes to execute.  Similar performance exists under ./waf shell.  However, running the executable directly is fast.\n\nUpgrading to waf-2.0.14 does not change performance.\n\nIn looking at timestamps from an output of './waf -vvv --run sample-simulator', it seems that most of the time is taken in the stage where Waf is checking hashes of every source file, and up to ten Python processes are spawned during this time.  Hash checking should not take much time so it must be something else.",
+        "state": "closed",
+        "created_at": "2019-01-12T02:43:17.411Z",
+        "updated_at": "2019-04-21T19:15:34.216Z",
+        "closed_at": "2019-04-19T22:48:29.689Z",
+        "closed_by": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "labels": [
+            "build system"
+        ],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "assignee": null,
+        "user_notes_count": 14,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/14",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/14",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/14/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/14/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#14",
+            "relative": "#14",
+            "full": "nsnam/ns-3-dev#14"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 131012268,
+                "type": null,
+                "body": "changed the description",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-12T05:21:53.292Z",
+                "updated_at": "2019-01-12T05:21:53.292Z",
+                "system": true,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131078598,
+                "type": null,
+                "body": "One change that I am contemplating is to provide a 'run' program that we start to suggest as an alternative:\n\n1) `./waf --run program-name`  (current behavior, will invoke `./waf build` and then run  the program)\n\n2) `./run program-name` (does not invoke ./waf build but instead does what ./waf run does after the build step)\n\nOption 1 can be recommended if user is not bugged by slowness of waf and is in development phase and wants to save keystrokes from typing two commands.  Option 2 can be recommended if the user is not trying to rebuild the code at every invocation (e.g. running an experiment from a script).",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-13T00:44:39.898Z",
+                "updated_at": "2019-01-13T00:44:39.898Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131523108,
+                "type": null,
+                "body": "What about ./waf program-name for the second case?",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-01-14T20:32:01.350Z",
+                "updated_at": "2019-01-14T20:32:01.350Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131523472,
+                "type": null,
+                "body": "I agree the up-to-date check shouldn't take long.  I do most of my development on a Mac (but not Xcode) and it takes a many seconds, but not as long as minute IIRC.  I'll time it next time I get a chance.\n\nIf the up-to-date check can be fast, then for ./waf program or ./run program it would be nice if could alert that the build is stale.",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-01-14T20:34:07.598Z",
+                "updated_at": "2019-01-14T20:34:07.598Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131565542,
+                "type": null,
+                "body": ">  What about ./waf program-name for the second case?\n\nThat would also be OK with me although requires deconflicting with waf main command names so possibly more confusing to the user, and requires waf modifications.",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-15T01:22:35.175Z",
+                "updated_at": "2019-01-15T01:22:35.175Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131565745,
+                "type": null,
+                "body": ">  If the up-to-date check can be fast, then for ./waf program or ./run program it would be nice if could alert that the build is stale.\n\nIs there a better way to do this than Waf's current approach (this is what seems to be slowing it down)?",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-15T01:24:53.740Z",
+                "updated_at": "2019-01-15T01:24:53.740Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131567853,
+                "type": null,
+                "body": "Here are some stats on an Xcode 10.1 machine, three trials per version:\n```\nns-3-dev build with examples, tests enabled, waf-2.0.9:\n$ time ./waf --run sample-simulator\nreal:  36s\nuser:  21s\nsys:   1.2s\n\nreal (trial 2):  36s\nreal (trial 3):  36s\n\nns-3.29 (same type of build), waf-2.0.9:\nreal:  1m17s\nuser:  25.4s\nsys:   1.8s\n\nreal (trial 2): 47s\nreal (trial 3): 45s\n\nns-3.28 (waf-1.8.19)\nreal:  9.5s\nuser:  4.7s\nsys:   0.7s\n\nreal (trial 2):  5.0s\nreal (trial 3):  5.1s\n```",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-15T01:51:10.903Z",
+                "updated_at": "2019-01-15T01:51:32.448Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131613862,
+                "type": null,
+                "body": "Another alternative to ./run might be `./waf --no-build --run ...`, similar to `./waf --doxygen-no-build`",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-01-15T07:03:49.039Z",
+                "updated_at": "2019-01-15T07:03:49.039Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131613474,
+                "type": null,
+                "body": "ns-3-dev as of Jan 8, with a few trivial edits  \nwaf 2.0.9  \nsystem python 2.7.10  \nMac OS X 10.13.6  \nwaf configured with   \n\tg++-7 (GCC) 7.3.0 (from Fink, not the system gcc or clang)  \n\texamples, tests, MPI, GSL, boost  \nBuild completed previously, so only checking that it's clean  \n  \n$ time ./waf build  \n\n| trial | 1         | 2         | 3         | ave   | stdev   |\n| ----- | --------- | --------- | --------- | ----- | ------- |\n| real  | 0m14.297s | 0m12.502s | 0m12.241s | 13.01 |   1.12  |\n| user  | 0m13.104s | 0m11.580s | 0m11.170s | 11.95 |   1.02  |\n| sys   | 0m1.943s  | 0m1.459s  | 0m1.417s  | 1.61  |   0.29  |\n  \nThis is consistent with your 3.28 case, but not 3.29 or ns-3-dev.  \n  \n$ time ./waf --run sample-simulator  \n\n| trial | 1          | 2         | 3         | ave   | stdev |\n| ----- | ---------- | --------- | --------- | ----- | ----- |\n| real  |  0m16.577s | 0m14.240s | 0m12.629s | 14.48 | 1.99  |\n| user  |  0m12.094s | 0m11.730s | 0m11.254s | 11.69 | 0.42  | \n| sys   |  0m1.663s  | 0m1.326s  | 0m0.842s  | 1.28  | 0.41  |\n",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-01-15T07:01:08.512Z",
+                "updated_at": "2019-01-15T07:15:28.013Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131618061,
+                "type": null,
+                "body": "With -vvv:\n\n23:20:26 env {'version'...  \n...  \n23:20:26 env ['NS3_OPTIONAL_FEATURES'...  \nWav: Entering directory  \nErroneous order constraint..  \n23:20:26 build_compile()  \n23:20:26 task_gen posting  \n...  \n23:20:30 envhash  \n...  \n23:20:43 envhash  \nWaf: leaving directory  \n  \nSo 4s in task_gen, 13s in hashing",
+                "attachment": null,
+                "author": {
+                    "id": 1138790,
+                    "name": "Peter Barnes",
+                    "username": "pdbj",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/0c66458167197aab9685021d93b141b9?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/pdbj"
+                },
+                "created_at": "2019-01-15T07:29:33.156Z",
+                "updated_at": "2019-01-15T07:29:33.156Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131751939,
+                "type": null,
+                "body": "Thanks for the test data.  Similarly, for my machine, the bulk of time is consumed in the hash check phase.  I wonder whether it has to do with managing the task list (issue #15 only shows up on ns-3.29 and ns-3-dev but not ns-3.28). \n\nEven if we remedy this to achieve your performance numbers, I would still argue for a --no-build option because taking seconds to run a command is too sluggish in many cases IMO.",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-15T14:07:24.203Z",
+                "updated_at": "2019-01-15T14:07:24.203Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 141897876,
+                "type": null,
+                "body": "mentioned in merge request !25",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-02-16T02:21:36.230Z",
+                "updated_at": "2019-02-16T02:21:36.230Z",
+                "system": true,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 141897946,
+                "type": null,
+                "body": "Merge request !25 proposes a --run-no-build option (also --pyrun-no-build) to workaround this issue, but the build slowness still should be fixed.",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-02-16T02:23:20.839Z",
+                "updated_at": "2019-02-23T04:39:55.939Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 157191399,
+                "type": null,
+                "body": "mentioned in commit c0997bc821012102d360fa3e5faf0df4c6641e39",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-03T22:35:18.858Z",
+                "updated_at": "2019-04-03T22:35:18.858Z",
+                "system": true,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 161878307,
+                "type": null,
+                "body": "mentioned in issue #15",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-17T18:25:52.652Z",
+                "updated_at": "2019-04-17T18:25:52.652Z",
+                "system": true,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 161902930,
+                "type": null,
+                "body": "I found an undocumented (or else I missed it earlier) --profile option to Waf that invokes cProfile.  This leads me to the following data on macOS for invoking\n\n```\n./waf --profile build\n```\n\non a pre-built ns-3.  On my macOS, this can take over 60 seconds to return, and here are the top two methods:\n\n```\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n    16253   49.151    0.003   49.151    0.003 {method 'read' of 'file' objects}\n   163621   19.517    0.000   19.517    0.000 {method 'update' of '_hashlib.HASH' objects}\n```\n\nOn a Fedora machine, I get:\n\n```\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n   179345    4.878    0.000    4.878    0.000 {method 'update' of '_hashlib.HASH' objects}\n1424027/963    0.940    0.000    2.255    0.002 /ns-3-dev/.waf-2.0.15-ff6573b86ad5ff5d449c8852ad58b8bc/waflib/Runner.py:318(visit)\n    19566    0.802    0.000    0.802    0.000 {method 'read' of 'file' objects}\n1414181/1298975    0.653    0.000    2.011    0.000 /ns-3-dev/.waf-2.0.15-ff6573b86ad5ff5d449c8852ad58b8bc/waflib/Runner.py:320(<genexpr>)\n```\n\nSo this suggests that the hashing step is slow, but on macOS, the reading of file objects has regressed significantly.\n\nI'll continue to poke at this.",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-17T20:22:49.559Z",
+                "updated_at": "2019-04-17T20:22:49.559Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 162577801,
+                "type": null,
+                "body": "With the Waf maintainer's help, I was able to resolve this; see:\nhttps://gitlab.com/ita1024/waf/issues/2231\n\nIn short, the conclusion was that the waf build invokes a number of filesystem operations that are slow on macOS.  In particular, the opening of files and hashing them to check if they have changed is very slow for some unknown reason.\n\nThere is an option in recent Waf to bypass the hashing and just check if timestamps have changed.  This dramatically improved performance on macOS, and also on Linux.  I have tested for the past day on Linux and macOS, and will commit this one-line patch to enable the md5_tstamp option.\n\nThe maintainer also suggested another possible option to disable DAG operations.  I tested this and found that, on a Mac (Intel Core i5 1.60 GHz), it can further reduce the no-op build time from around 3s to around 2s.  On a beefier Linux machine (Xeon E5 2630 2.4GHz), it can reduce the no-op build from 1.9s to 1.5s.  While this additional patch is still faster, it may have side effects, and since we recently introduced the ./waf --run-no-build option, it may not be needed to further shave time from runs.\n\nI will leave the below patch to wscript in the tracker here in case someone wants to propose adding it in the future:\n\n```\n@@ -846,6 +847,11 @@ def get_build_profile(env=None):\n     return \"not found\"\n \n def build(bld):\n+    from waflib import Runner\n+    def prio_and_split(self, tasks):\n+        return tasks, []\n+    Runner.Parallel.prio_and_split = prio_and_split\n+\n     env = bld.env\n \n     if Options.options.check_config:\n```",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-19T21:08:19.057Z",
+                "updated_at": "2019-04-19T21:08:19.057Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 162585997,
+                "type": null,
+                "body": "Further testing of the disable DAG operation patch on a slow Linux machine (Intel Core(TM)2 Quad CPU Q6600 @ 2.40GHz) resulted in reduction of the time to run a program on the order of a second (from ~5s to run first tutorial program, to ~4s).  By comparison, ./waf --run-no-build first runs the program in 500ms.",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-19T22:46:37.699Z",
+                "updated_at": "2019-04-19T22:46:37.699Z",
+                "system": false,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            },
+            {
+                "id": 162586150,
+                "type": null,
+                "body": "closed via commit b8237493256e0a263fc711f327e71f54520caef2",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-19T22:48:29.769Z",
+                "updated_at": "2019-04-19T22:48:29.769Z",
+                "system": true,
+                "noteable_id": 17284869,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 14,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920106.842374,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "0b4cb3a6c2b952610a90d4c4dcaad1a5edf3b6f5",
+    "updated_on": 1555874134.272,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "19816827",
+        "owner": "nsnam",
+        "iid": 46,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 19816827,
+        "iid": 46,
+        "project_id": 7128405,
+        "title": "export headers for transport protocol modularity",
+        "description": "When trying to modularize QUIC outside of src/internet stack, authors found that they were limited by lack of public headers for endpoint and endpoint demux.  I propose that we include them going forward in the src/internet/wscript.",
+        "state": "closed",
+        "created_at": "2019-04-07T17:26:04.336Z",
+        "updated_at": "2019-04-21T19:15:34.272Z",
+        "closed_at": "2019-04-17T17:30:59.902Z",
+        "closed_by": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "labels": [
+            "module:internet"
+        ],
+        "milestone": null,
+        "assignees": [],
+        "author": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "assignee": null,
+        "user_notes_count": 0,
+        "merge_requests_count": 1,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/46",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/46",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/46/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/46/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#46",
+            "relative": "#46",
+            "full": "nsnam/ns-3-dev#46"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 158205131,
+                "type": null,
+                "body": "mentioned in merge request !50",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-07T17:28:07.134Z",
+                "updated_at": "2019-04-07T17:28:07.134Z",
+                "system": true,
+                "noteable_id": 19816827,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 46,
+                "award_emoji_data": []
+            },
+            {
+                "id": 161864449,
+                "type": null,
+                "body": "closed via commit 42541d6cba5de572d23aa1f2498ba938a8bdcaab",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-17T17:30:59.959Z",
+                "updated_at": "2019-04-17T17:30:59.959Z",
+                "system": true,
+                "noteable_id": 19816827,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 46,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}
+{
+    "backend_name": "GitLab",
+    "backend_version": "0.11.0",
+    "perceval_version": "0.12.24",
+    "timestamp": 1583920111.860918,
+    "origin": "https://gitlab.com/nsnam/ns-3-dev",
+    "uuid": "b1a1f4055c5d394ed41cbea9fc76446020f5ee0a",
+    "updated_on": 1555874134.284,
+    "classified_fields_filtered": null,
+    "category": "issue",
+    "search_fields": {
+        "item_id": "17285663",
+        "owner": "nsnam",
+        "iid": 15,
+        "project": "ns-3-dev",
+        "groups": null
+    },
+    "tag": "https://gitlab.com/nsnam/ns-3-dev",
+    "data": {
+        "id": 17285663,
+        "iid": 15,
+        "project_id": 7128405,
+        "title": "Waf reports erroneous order constraints on macOS",
+        "description": "./waf -v --run sample-simulator on macOS Xcode 10 returns:\n\n    Erroneous order constraint 'after'='link' on task class 'print_introspected_doxygen_task'\n    Erroneous order constraint 'after'='link' on task class 'run_python_unit_tests_task'\n    Erroneous order constraint 'after'='link' on task class 'SuidBuild_task'\n\nDeleting the 'link' constraint from the after removes the error but I'm not sure what side effects that it has.",
+        "state": "closed",
+        "created_at": "2019-01-12T05:14:59.949Z",
+        "updated_at": "2019-04-21T19:15:34.284Z",
+        "closed_at": "2019-04-21T18:54:18.476Z",
+        "closed_by": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "labels": [
+            "build system"
+        ],
+        "milestone": {
+            "id": 852997,
+            "iid": 2,
+            "project_id": 7128405,
+            "title": "ns-3.30",
+            "description": "",
+            "state": "active",
+            "created_at": "2019-04-19T23:12:03.143Z",
+            "updated_at": "2019-05-25T08:44:48.249Z",
+            "due_date": "2019-05-31",
+            "start_date": "2019-04-19",
+            "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/milestones/2"
+        },
+        "assignees": [],
+        "author": {
+            "id": 2480280,
+            "name": "Tom Henderson",
+            "username": "tomhenderson",
+            "state": "active",
+            "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+            "web_url": "https://gitlab.com/tomhenderson"
+        },
+        "assignee": null,
+        "user_notes_count": 4,
+        "merge_requests_count": 0,
+        "upvotes": 0,
+        "downvotes": 0,
+        "due_date": null,
+        "confidential": false,
+        "discussion_locked": null,
+        "web_url": "https://gitlab.com/nsnam/ns-3-dev/-/issues/15",
+        "time_stats": {
+            "time_estimate": 0,
+            "total_time_spent": 0,
+            "human_time_estimate": null,
+            "human_total_time_spent": null
+        },
+        "task_completion_status": {
+            "count": 0,
+            "completed_count": 0
+        },
+        "weight": null,
+        "has_tasks": false,
+        "_links": {
+            "self": "https://gitlab.com/api/v4/projects/7128405/issues/15",
+            "notes": "https://gitlab.com/api/v4/projects/7128405/issues/15/notes",
+            "award_emoji": "https://gitlab.com/api/v4/projects/7128405/issues/15/award_emoji",
+            "project": "https://gitlab.com/api/v4/projects/7128405"
+        },
+        "references": {
+            "short": "#15",
+            "relative": "#15",
+            "full": "nsnam/ns-3-dev#15"
+        },
+        "moved_to_id": null,
+        "epic_iid": null,
+        "epic": null,
+        "notes_data": [
+            {
+                "id": 131012242,
+                "type": null,
+                "body": "changed the description",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-12T05:20:27.627Z",
+                "updated_at": "2019-01-12T05:20:27.627Z",
+                "system": true,
+                "noteable_id": 17285663,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 15,
+                "award_emoji_data": []
+            },
+            {
+                "id": 131751942,
+                "type": null,
+                "body": "mentioned in issue #14",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-01-15T14:07:24.506Z",
+                "updated_at": "2019-01-15T14:07:24.506Z",
+                "system": true,
+                "noteable_id": 17285663,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 15,
+                "award_emoji_data": []
+            },
+            {
+                "id": 159307387,
+                "type": null,
+                "body": "Ubuntu 18 reports the same.",
+                "attachment": null,
+                "author": {
+                    "id": 3034205,
+                    "name": "Manuel Requena",
+                    "username": "mrequena",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/f3f4dad31c66471b7013b1638a15f717?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/mrequena"
+                },
+                "created_at": "2019-04-10T09:36:03.290Z",
+                "updated_at": "2019-04-10T09:36:03.290Z",
+                "system": false,
+                "noteable_id": 17285663,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 15,
+                "award_emoji_data": []
+            },
+            {
+                "id": 159323172,
+                "type": null,
+                "body": "The error comes from line 71 in .waf-2.0.15-*/waflib/Tools/errcheck.py and according to https://waf.io/apidocs/Task.html?highlight=task%20classes#waflib.Task.classes, there is a 'link_task' but not 'link' class.\n\nChanging 'link' by 'link_task' removes the message. No idea if it is the correct fix.",
+                "attachment": null,
+                "author": {
+                    "id": 3034205,
+                    "name": "Manuel Requena",
+                    "username": "mrequena",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/f3f4dad31c66471b7013b1638a15f717?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/mrequena"
+                },
+                "created_at": "2019-04-10T10:10:13.199Z",
+                "updated_at": "2019-04-10T10:10:13.199Z",
+                "system": false,
+                "noteable_id": 17285663,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 15,
+                "award_emoji_data": []
+            },
+            {
+                "id": 161878304,
+                "type": null,
+                "body": "I confirm that this removes the error report (but it doesn't solve the performance regression of #14).",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-17T18:25:52.237Z",
+                "updated_at": "2019-04-17T18:25:52.237Z",
+                "system": false,
+                "noteable_id": 17285663,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 15,
+                "award_emoji_data": []
+            },
+            {
+                "id": 162293095,
+                "type": null,
+                "body": "Since `link_task` is the base class, the desired constraint is most likely `after = ['cxxprogram', 'cxxshlib', 'cxxstlib']`.\n\nThe classes `print_introspected_doxygen_task` and `run_python_unit_tests_task` looks like dead code though.",
+                "attachment": null,
+                "author": {
+                    "id": 2440044,
+                    "name": "ita1024",
+                    "username": "ita1024",
+                    "state": "active",
+                    "avatar_url": "https://assets.gitlab-static.net/uploads/-/system/user/avatar/2440044/avatar.png",
+                    "web_url": "https://gitlab.com/ita1024"
+                },
+                "created_at": "2019-04-18T19:39:08.744Z",
+                "updated_at": "2019-04-18T19:39:08.744Z",
+                "system": false,
+                "noteable_id": 17285663,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 15,
+                "award_emoji_data": []
+            },
+            {
+                "id": 162587750,
+                "type": null,
+                "body": "changed milestone to %2",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-19T23:12:25.556Z",
+                "updated_at": "2019-04-19T23:12:25.556Z",
+                "system": true,
+                "noteable_id": 17285663,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 15,
+                "award_emoji_data": []
+            },
+            {
+                "id": 162767307,
+                "type": null,
+                "body": "closed via commit 5396fc911e1bd06e1bb44fbb9491fce80d8f89ea",
+                "attachment": null,
+                "author": {
+                    "id": 2480280,
+                    "name": "Tom Henderson",
+                    "username": "tomhenderson",
+                    "state": "active",
+                    "avatar_url": "https://secure.gravatar.com/avatar/5f2e81000565ed63707a582858ff0964?s=80&d=identicon",
+                    "web_url": "https://gitlab.com/tomhenderson"
+                },
+                "created_at": "2019-04-21T18:54:18.568Z",
+                "updated_at": "2019-04-21T18:54:18.568Z",
+                "system": true,
+                "noteable_id": 17285663,
+                "noteable_type": "Issue",
+                "resolvable": false,
+                "noteable_iid": 15,
+                "award_emoji_data": []
+            }
+        ],
+        "award_emoji_data": []
+    }
+}

@@ -1,0 +1,14 @@
+grimoirelab-sirmordred : https://github.com/chaoss/grimoirelab-sirmordred.git
+grimoirelab-elk : https://github.com/chaoss/grimoirelab-elk.git
+grimoirelab-graal : https://github.com/chaoss/grimoirelab-graal.git
+grimoirelab-perceval : https://github.com/chaoss/grimoirelab-perceval.git
+grimoirelab-perceval-mozilla : https://github.com/chaoss/grimoirelab-perceval-mozilla.git
+grimoirelab-perceval-opnfv : https://github.com/chaoss/grimoirelab-perceval-opnfv.git
+perceval-puppet : https://github.com/chaoss/grimoirelab-perceval-puppet.git
+grimoirelab-perceval-puppet : https://github.com/chaoss/grimoirelab-perceval-finos.git
+grimoirelab-sortinghat : https://github.com/chaoss/grimoirelab-sortinghat.git
+grimoirelab-sigils : https://github.com/chaoss/grimoirelab-sigils.git
+grimoirelab-kidash : https://github.com/chaoss/grimoirelab-kidash.git
+grimoirelab-toolkit : https://github.com/chaoss/grimoirelab-toolkit.git
+grimoirelab-cereslib : https://github.com/chaoss/grimoirelab-cereslib.git
+grimoirelab-manuscripts : https://github.com/chaoss/grimoirelab-manuscripts.git
