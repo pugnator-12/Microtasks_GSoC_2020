@@ -1,0 +1,40 @@
+{
+    "grimoire": {
+        "git": [
+            "https://github.com/PaulLeCam/react-leaflet"
+        ],
+        "pipermail": [
+            "https://lists.linuxfoundation.org/pipermail/grimoirelab-discussions/"
+        ],
+         "mbox": [
+            "tyit_b_2017admitted@somaiya.edu /home/mbox_files/starred_mails"
+        ],
+        "groupsio": [
+            "onap"
+        ],
+        "cocom": [
+            "https://github.com/chaoss/grimoirelab-toolkit"
+        ],
+        "colic": [
+            "https://github.com/chaoss/grimoirelab-toolkit"
+        ],
+        "github": [
+            "https://github.com/Errichto/coffee-supplier"
+        ],
+        "*github:pull": [
+            "https://github.com/chaoss/grimoirelab-perceval"
+        ],
+        "github:repo": [
+            "https://github.com/Errichto/coffee-supplier"
+        ],
+        "jenkins": [
+           "https://build.opnfv.org/ci"
+        ],
+        "gitlab:issue": [
+            "https://gitlab.com/gitlab-org/gitlab-ce"
+        ],
+        "gitlab:merge": [
+            "https://gitlab.com/gitlab-org/gitlab-ce"
+        ]
+    }
+}
