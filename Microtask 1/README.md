@@ -8,20 +8,62 @@ Set up Perceval to be executed from PyCharm.
 
 * Create a pycharm project .
 
-* Refer below for the setup
+* Add 'grimoirelab-perceval' to the project structure 
 
-    * Add 'grimoirelab-perceval' to the project structure and install its dependencies using -
+    ```
+    file => settings => Project:<your project name> => Project structure => Add Content Root
+    ```
+
+    ![project_structure](./images/mt1_project_structure.png)
+
+    ```
+    => browse to the cloned 'grimoirelab-perceval' directory 
+    ```
+
+    ![add_perceval](./images/mt1_proj_struc_path.jpg)
+
+    ```
+    => Apply => Okay
+    ```
+
+    Refer the video 'project_structure.mp4' for this step. 
+
+* Install its dependencies using -
 
     ```
     pip3 install -r <path to grimoirelab-perceval's requirements.txt> 
     ```
-![add_perceval_to_project_structure](./images/proj_structure.gif)
 
-* Refer below for the demo!
+* Add configuration for running perceval.
 
-    * Add configuration for running perceval.
+    ```
+    run => edit configurations
+    ```
+    
+    ![config](./images/edit_config.png)
 
-![demo_percecval](./images/perceval_demo.gif)
+    ![add_config](./images/add_config.jpg)
+
+    ```
+    Script path - mention path to 'grimoirelab-perceval/bin/perceval.py' file.
+
+    github <owner> <repo> --sleep-for-rate -t <github-token>
+    ```
+
+    ![config_details](./images/config_details.png)
+
+    ```
+    Apply => Okay
+    ```
+
+    Run 
+
+    ![run](./images/locate_config.png)
+
+    Output
+
+    ![op](./images/mt1_op.png)
+
 
 ***
 
