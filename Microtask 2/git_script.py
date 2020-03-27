@@ -1,5 +1,5 @@
-# python3 git_script.py -backend gitlab -repo silentprogrammers/vacation_system -t <gitlab_token> -f gitlab_mt2.output
-# python3 git_script.py -backend github -repo Sentdex/sentdebot -t <github_personal_access_token> -f github_op.output
+# python3 git_script.py -backend gitlab -repo silentprogrammers/vacation_system -t <gitlab_token> -f gitlab_op.output
+# python3 git_script.py -backend github -repo Sentdex/sentdebot -t <github_token> -f github_op.output
 
 import argparse
 from perceval.backends.core.github import GitHub
@@ -8,6 +8,15 @@ import json
 
 
 class PercevalBackends:
+    """
+    This is a class to is used to execute Perceval using the GitLab and GitHub backends.
+    Attributes:
+        owner (string): owner of the repo.
+        repo (string):  name of the repo to be fetched.
+        token (string): GitLab token or GitHub personal access token.
+        op_file (string): path of file where fetched items are to be stored.
+        backend (string): name of the backend (gitlab / github)
+    """
 
     def __init__(self, owner, repo, token, op_file, backend):
         self.owner = owner
@@ -17,6 +26,11 @@ class PercevalBackends:
         self.backend = backend
 
     def write_to_file(self, obj):
+
+        """
+        :param obj: perceval json object to be written to the output file.
+        """
+
         f = open(self.op_file, "w")
         f.write("Details for : " + self.repo + "\n")
         f.close()
@@ -40,11 +54,15 @@ class PercevalBackends:
         return gitlabObj
 
     def store_data(self):
+        """
+        Fetches objects for the respective backends and executes storage of perceval objects in respective json file.
+        """
         if (self.backend == "gitlab"):
             perceval_obj = self.__get_gitlab_data()
 
         elif (self.backend == "github"):
             perceval_obj = self.__get_github_data()
+
         self.write_to_file(perceval_obj)
         print("Done!!")
 
