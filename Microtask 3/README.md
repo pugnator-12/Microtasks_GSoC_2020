@@ -20,6 +20,15 @@ This date is converted to UNIX timestamp format.
 
 >"updated_on" is the latest date among all "update_at" dates for an item.
 
+The "updated_on" attribute is calculated considering all the "updated_at" attributes of that item.
+
+"updated_at" attribute indicates date for any new change made to the item like comments, reactions, etc.
+"updated_at" is defined for every change to the item.
+
+In the case of github, the "updated_on" is obtained from the attribute "updated_at" of issues/pull requests. 
+
+"updated_on" is then calculated for the entire item and it gives the overall idea of when the item was last modified.
+
 
 ***
 
@@ -38,7 +47,42 @@ It is  the same for all the fetched json objects.
 
 4. What is the meaning of the JSON attribute 'category'?
 
-Category attribute indicates whether the object fetched from the repo is an 'issue','pull request' or 'repository' for github backend (CATEGORIES = ['issue', 'pull_request','repository']) and for gitlab backend categories can be 'issue' or 'merge_request' (CATEGORIES = ['issue', 'merge_request']).
+Category attribute indicates the type of object fetched for a given backend.
+
+
+| Backend  | Categories   |
+|--------- | ------------ |
+| askbot | question |
+| bugzilla | bug |
+| bugzillarest | bug |
+| confluence | historical content |
+| discourse | topic |
+| dockerhub | dockerhub-data |
+| gerrit | review |
+| git | commit |
+| GitHub   | issue / pull request / repository|
+| GitLab   | issue / merge_request |
+| googlehits | google_hits |
+| groupsio | message |
+| hyperkitty | message |
+| jenkins | build | 
+| jira | issue |
+| launchpad | issue |
+| mattermost | post |
+| mbox | message |
+| mediawiki | page |
+| meetup | event |
+| nntp | article |
+| pagure | issue |
+| phabricator | task |
+| pipermail | message |
+| redmine | issue |
+| rss | entry |
+| slack | message |
+| stackexchange | question |
+| supybot | message |
+| telegram | message |
+| twitter | tweet |
 
 
 ***
