@@ -14,11 +14,24 @@ npm install elasticdump -g
 
 CTRL+D to logout from root user
 
+***
+
+>### Use the 'type' argument to either fetch data or mapping.
+
+
 ## To get data from the index
+
+```
+elasticdump --input=http://localhost:9200/git_chaoss/ --output=git_data.json --type=data
+```
 
 ![data](./images/elasticdump_data.png)
 
 ## To get mapping from the index
+
+```
+elasticdump --input=http://localhost:9200/git_chaoss/ --output=git_mapping.json --type=mapping
+```
 
 ![data](./images/elasticdump_mapping.png)
 
@@ -28,9 +41,11 @@ This will generate output files
 
 ## OUTPUT 
 
-data file
+"data" File
 
 ![data](./images/data.png)
+
+"mapping" File
 
 ![mapping](./images/mapping.png)
 
