@@ -10,21 +10,30 @@ Two text files are needed -
 
 > Please maintain spaces as mentioned the files attached here.
 
->  The script creates 'sources' folder and adds upstream
-
-Input command
-
-![Example](./images/command.png)
-
-File structure
-
-![final](./images/example.png)
-
 You may select from two choices - install or update
 
  * install : First time installation.
 
  * update : Update the forked repos with the parent repo.
+
+>  The script creates 'sources' folder and adds upstream
+
+Run the following command to install dependencies
+
+```
+python3 install_dependencies.py -choice install -file <file_name>
+```
+
+
+Run the following command to update the installed repos
+
+```
+python3 install_dependencies.py -choice update -file <file_name>
+```
+
+File structure
+
+![final](./images/example.png)
 
 ## 2. Create a project in  'grimoirelab-sirmordred' directory.
 
@@ -53,13 +62,11 @@ sudo apt-get update
 ```
 sudo apt install docker.io
 ```
-![docker-installation](./images/docker_in1.png)
 
 ```
 sudo systemctl start docker
 sudo systemctl enable docker
 ```
-![docker-insatllation](./images/docker_in2.png)
 
 To check whether docker has installed correctly.
 
@@ -104,8 +111,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-![docker-compose](./images/docker-compose1.png)
-
 ![docker-compose](./images/docker-compose2.png)
 
 
@@ -119,8 +124,6 @@ docker-compose --version
   > YAML file specifies the versions(images) of the required dependencies used. (YAML files are indentation sensitive).
 
   * Save this file in a directory for docker files.
-
-  ![docker-compose-location](./images/docker-compose-loc.png)
 
   * Add current user to docker group 
   [Refer](https://linoxide.com/linux-how-to/use-docker-without-sudo-ubuntu/)
@@ -147,6 +150,9 @@ docker-compose --version
 
   View the running containers
 
+  ```
+  docker-compose ps
+  ```
   ![docker-compose-ps](./images/docker_compose_ps.png)
 
   * Resolve error related to insufficient max_map_count
@@ -154,9 +160,6 @@ docker-compose --version
   ```
   sudo sysctl -w vm.max_map_count=262144
   ```
-
-  ![error](./images/map_count_error.png)
-
   AND
 
   In YAML file - elasticsearch
