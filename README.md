@@ -95,7 +95,7 @@ Microtasks for GSOC Idea : [Implement the Social Currency Metrics System in Grim
     
     Then, write a script to read the enriched index and import the attributes uuid, project, project_1, origin, grimoirelab_creation_date, body and subject_analyzed to a CSV file. Import the obtained file to an excel sheet (in a manual or automatic way).
 
-    Script can be found [here](https://github.com/pugnator-12/Microtasks_GSoC_2020/blob/master/Microtask%208/groupsio.py).
+    Script can be found [here](https://github.com/pugnator-12/Microtasks_GSoC_2020/blob/master/Microtask%208/get_groupsio_data%20.py).
 
 ***
 
