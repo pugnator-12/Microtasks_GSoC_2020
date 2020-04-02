@@ -53,4 +53,23 @@ Output csv file
 
 ***
 
+### Upload csv to google sheets 
+
+The csv file generated can be uploaded to a google spreadsheet and shared with any user for editing or collaboration purposes using the command : 
+
+```
+python create_sheet.py -mail <user mail_id> -csv <csv_file_name> -s <spreadsheet_name>
+```
+
+### Allow editing and download updated sheet
+
+Run the following command to get the data from the google spreadsheet in json format.
+
+```
+python get_sheet.py -j <json_file_name> -s <spreadsheet_name>
+```
+
+***
+
+
 
